@@ -18,7 +18,7 @@ Follow these steps to get started with the project:
 1. Clone the repository:
 
 bash
-*git clone https://github.com/Jilo777/pwani-innovation-week-.git*
+*git clone (https://github.com/swahilipothub-dev/pwani-innovation-week)*
 2. Navigate to the project directory:
 
 bash
