@@ -27,11 +27,11 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl md:text-2xl font-medium text-gray-700 mt-6">
-                The Pwani We Desire: Youth, Culture, Peace and Innovation in the Decade of Action.
+                Pwani Re-imagined: Youth Agency, Innovation and Sustainability of Coastal Economies
               </p>
               
               <p className="text-lg md:text-xl text-[#F97316] font-medium mt-4">
-                14th - 18th October 2025 • Mombasa, Kenya
+                27th - 31st October 2025 • Swahilipot Hub Foundation, Mombasa, Kenya
               </p>
             </div>
             
