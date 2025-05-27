@@ -13,7 +13,7 @@ const Footer = () => {
               <img src='/piw_logo.png' height={30} width={200} />
             </div>
             <p className="text-gray-300 mb-6">
-              Pwani Innovation Week 2025<br />
+              Pwani Innovation Week 2025 <br />
               Pwani Re-imagined: Youth Agency, Innovation and Sustainability of Coastal Economies.
             </p>
             <div className="flex space-x-4">
