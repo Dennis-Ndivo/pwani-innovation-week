@@ -1,7 +1,13 @@
 
 import React from 'react';
+import {useInView} from "react-intersection-observer";
 
 const About = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <section id="about" className="pb-20 bg-white">
       <div className="section-container">
@@ -57,7 +63,7 @@ const About = () => {
         
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm card-hover">
-            <div className="text-coral text-3xl font-bold mb-2">Hackathon</div>
+            <div className="text-coral text-3xl font-bold mb-2">Hackathons</div>
             <p className="text-gray-700">
               Bringing together developers, designers, and innovators to solve real-world challenges facing coastal communities.
             </p>
@@ -82,6 +88,33 @@ const About = () => {
             <p className="text-gray-700">
               Creating connections between innovators, investors, and support organizations to foster collaboration.
             </p>
+          </div>
+        </div>
+
+        <div className="text-center my-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Pwani Innovation Week in Numbers</h2>
+          <div className="w-24 h-1 bg-ocean mx-auto"></div>
+        </div>
+
+        <div ref={ref} className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className={`text-center transition-all duration-700 ${inView ? 'animate-count-up' : 'opacity-0'}`}>
+            <p className="text-4xl font-bold text-[#F97316]">3,000+</p>
+            <p className="text-gray-600 font-medium">Delegates</p>
+          </div>
+
+          <div className={`text-center transition-all duration-700 delay-300 ${inView ? 'animate-count-up' : 'opacity-0'}`}>
+            <p className="text-4xl font-bold text-[#F97316]">5</p>
+            <p className="text-gray-600 font-medium">Days</p>
+          </div>
+
+          <div className={`text-center transition-all duration-700 delay-500 ${inView ? 'animate-count-up' : 'opacity-0'}`}>
+            <p className="text-4xl font-bold text-[#F97316]">12+</p>
+            <p className="text-gray-600 font-medium">Sessions</p>
+          </div>
+
+          <div className={`text-center transition-all duration-700 delay-700 ${inView ? 'animate-count-up' : 'opacity-0'}`}>
+            <p className="text-4xl font-bold text-[#F97316]">50+</p>
+            <p className="text-gray-600 font-medium">Speakers</p>
           </div>
         </div>
       </div>
