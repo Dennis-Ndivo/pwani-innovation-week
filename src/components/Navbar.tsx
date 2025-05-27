@@ -50,9 +50,9 @@ const Navbar = () => {
                 <a href="#themes" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Themes
                 </a>
-                <a href="#tickets" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                {/*<a href="#tickets" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Tickets
-                </a>
+                </a>*/}
               </div>
             </ScrollArea>
           </div>
@@ -100,13 +100,13 @@ const Navbar = () => {
             >
               Themes
             </a>
-            <a
+            {/*<a
               href="#tickets"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               Tickets
-            </a>
+            </a>*/}
           </div>
         </div>
       )}

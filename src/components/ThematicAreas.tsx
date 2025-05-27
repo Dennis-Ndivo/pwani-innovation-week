@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Globe, Cloud, Heart, Gavel } from 'lucide-react';
+import { Globe, UsersRound, Laptop } from 'lucide-react';
 
 const ThematicAreas = () => {
   return (
@@ -17,46 +17,67 @@ const ThematicAreas = () => {
               <div className="p-3 bg-ocean/20 rounded-lg">
                 <Globe className="text-ocean h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Emerging Tech and Innovation</h3>
+              <h3 className="text-xl font-bold text-gray-800">Sustainable Coastal Economies</h3>
             </div>
             <p className="text-gray-700">
-              This thematic area will focus on inspiring the exploration and adoption of cutting-edge technologies for coastal resilience, resource management, and disaster preparedness. From AI and machine learning to blockchain and IoT, discover how innovative technologies can address unique challenges faced by coastal communities.
+              This track, a follow-up to
+              discussions at PIW2024,
+              explores opportunities for
+              youth and women within
+              Sustainable Coastal
+              Economies, specifically in
+              aquaculture (including young
+              mothers in fish, emerging
+              sectors like rging trends in
+              seaweed and fish farming),
+              the Cultural & Creative
+              Industries (CCIs), and the
+              tourism value chain.
             </p>
           </div>
           
           <div className="bg-green-50 rounded-xl p-8 transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex items-center space-x-4 mb-6">
               <div className="p-3 bg-leaf/20 rounded-lg">
-                <Cloud className="text-leaf h-8 w-8" />
+                <Laptop className="text-leaf h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Climate Action</h3>
+              <h3 className="text-xl font-bold text-gray-800">Digital Transformation</h3>
             </div>
             <p className="text-gray-700">
-              This thematic area will focus on leveraging innovative approaches and adaptive strategies for mitigating the impacts of climate change on coastal communities. From sustainable fishing practices and renewable energy solutions to waste management and conservation efforts, explore how innovation can create a more sustainable future for coastal regions.
+              This track empowers coastal
+              communities to harness
+              digital technologies for
+              problem-solving and
+              economic advancement.
+              From mobile apps and AI to
+              cloud services and
+              blockchain, participants will
+              explore how tech can disrupt
+              traditional models and unlock
+              new opportunities.
             </p>
           </div>
           
           <div className="bg-purple-50 rounded-xl p-8 transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex items-center space-x-4 mb-6">
               <div className="p-3 bg-purple/20 rounded-lg">
-                <Heart className="text-purple h-8 w-8" />
+                <UsersRound className="text-purple h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Peace, Inclusivity and Equity</h3>
+              <h3 className="text-xl font-bold text-gray-800">Youth agency</h3>
             </div>
             <p className="text-gray-700">
-              This track will focus on building strategies for resilience that can foster social cohesion and collaboration among diverse stakeholders, contributing to peace and inclusivity in coastal areas. Learn about initiatives that promote equitable access to resources, opportunities, and representation for all community members.
-            </p>
-          </div>
-          
-          <div className="bg-orange-50 rounded-xl p-8 transition-transform duration-300 hover:translate-y-[-5px]">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-3 bg-coral/20 rounded-lg">
-                <Gavel className="text-coral h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800">Participatory Governance</h3>
-            </div>
-            <p className="text-gray-700">
-              This track will focus on initiatives that promote citizen science, community-based monitoring, and co-management approaches that empower locals to actively participate in the governance and management of resources and infrastructure. Discover how inclusive decision-making processes can lead to more effective and sustainable development outcomes.
+              This track celebrates
+              Pwani youth as agents of
+              change, policy
+              influencers, and culture
+              shapers. It highlights
+              their roles in leadership,
+              civic engagement, and
+              social innovation
+              emphasizing mental
+              health and well-being as
+              essential for sustained
+              impact.
             </p>
           </div>
         </div>

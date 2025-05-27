@@ -20,10 +20,23 @@ const Objectives = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Showcase Untapped Innovation Potential</h3>
-              <p className="text-gray-600">
-                To showcase untapped innovation potential across Pwani by highlighting successful youth-led ventures and creative solutions to local challenges.
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Amplify (Paza)</h3>
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  Allow SMEs
+                  driving coastal
+                  economies to
+                  showcase and
+                  amplify their work.
+                </li>
+                <li>
+                  Situate youth at
+                  the center of
+                  change and
+                  improved
+                  livelihoods
+                </li>
+              </ul>
             </div>
           </div>
           
@@ -36,10 +49,16 @@ const Objectives = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Cultivate Innovation Ecosystem</h3>
-              <p className="text-gray-600">
-                To cultivate a vibrant innovation ecosystem within Pwani by fostering youth participation, equipping them with relevant skills and knowledge, and creating an environment that retains their talent for regional development.
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Empower (Inua)</h3>
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  A pitch deck for
+                  startups to
+                  access
+                  investors and
+                  seed fund.
+                </li>
+              </ul>
             </div>
           </div>
           
@@ -52,10 +71,19 @@ const Objectives = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Leverage Unique Coastal Economies</h3>
-              <p className="text-gray-600">
-                To leverage the region's unique coastal economies (Blue, Green, Orange, Digital economies) and rich biodiversity to attract domestic and foreign investment.
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Connect (Unganisha)</h3>
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  Public and private
+                  sector in driving
+                  coastal economies
+                </li>
+                <li>
+                  Connect coastal
+                  businesses to
+                  consumers
+                </li>
+              </ul>
             </div>
           </div>
         </div>
