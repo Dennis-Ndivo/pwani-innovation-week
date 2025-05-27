@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-[#F97316]">PIW<span className="text-[#F97316]">2025</span></h1>
+              <img src='/piw_logo.png' height={30} width={150} className='bg-[#F97316] rounded-md' alt='PIW Logo'/>
             </Link>
           </div>
           
