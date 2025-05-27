@@ -95,12 +95,12 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-8">
-              <a
+              {/*<a
                 href="#tickets"
                 className="bg-[#F97316] hover:bg-[#EA580C] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-base sm:text-lg font-semibold flex items-center gap-2 transition-colors duration-300 justify-center"
               >
                 Register Now <ArrowRight size={20} />
-              </a>
+              </a>*/}
 
               <a
                 href="#about"
