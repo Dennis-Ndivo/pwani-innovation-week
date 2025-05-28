@@ -1,8 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +37,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <img src='/piw_logo.png' height={30} width={150} className='bg-[#F97316] rounded-md' alt='PIW Logo'/>
+              <h1 className="text-2xl font-bold text-[#F97316]">PIW<span className="text-[#F97316]">2025</span></h1>
             </Link>
           </div>
           
@@ -41,18 +47,32 @@ const Navbar = () => {
                 <Link to="/" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Home
                 </Link>
-                <a href="#about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                <Link to="/about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   About
-                </a>
-                <a href="#objectives" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Objectives
-                </a>
-                <a href="#themes" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Themes
-                </a>
-                <a href="#tickets" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Tickets
-                </a>
+                </Link>
+                <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                  Schedule
+                </Link>
+                <Link to="/speakers" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                  Speakers
+                </Link>
+                <Link to="/engage" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                  Engage
+                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                    Past Events
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-white shadow-lg border rounded-md z-50">
+                    <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
+                      <a href="#" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2023</a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
+                      <a href="#" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2024</a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </ScrollArea>
           </div>
@@ -79,33 +99,47 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               About
-            </a>
-            <a
-              href="#objectives"
+            </Link>
+            <Link
+              to="/schedule"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Objectives
-            </a>
-            <a
-              href="#themes"
+              Schedule
+            </Link>
+            <Link
+              to="/speakers"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Themes
-            </a>
-            <a
-              href="#tickets"
+              Speakers
+            </Link>
+            <Link
+              to="/engage"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Tickets
+              Engage
+            </Link>
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              PIW 2023
+            </a>
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              PIW 2024
             </a>
           </div>
         </div>

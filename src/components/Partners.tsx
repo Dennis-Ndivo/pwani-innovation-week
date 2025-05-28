@@ -3,6 +3,8 @@ import React from 'react';
 import { Handshake } from 'lucide-react';
 
 const Partners = () => {
+  const partners = Array.from({ length: 8 }, (_, index) => index + 1);
+
   return (
     <section id="partners" className="py-20 bg-white">
       <div className="section-container">
@@ -14,16 +16,32 @@ const Partners = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {/* Partner logos */}
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-40 card-hover">
-              <div className="flex flex-col items-center justify-center text-gray-400">
-                <Handshake className="h-12 w-12 mb-2" />
-                <div className="text-sm font-medium">Partner {index}</div>
+        {/* Continuous carousel */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll">
+            {/* First set of partners */}
+            {partners.map((index) => (
+              <div key={`first-${index}`} className="flex-shrink-0 w-64 mx-4">
+                <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-40 card-hover">
+                  <div className="flex flex-col items-center justify-center text-gray-400">
+                    <Handshake className="h-12 w-12 mb-2" />
+                    <div className="text-sm font-medium">Partner {index}</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {partners.map((index) => (
+              <div key={`second-${index}`} className="flex-shrink-0 w-64 mx-4">
+                <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-40 card-hover">
+                  <div className="flex flex-col items-center justify-center text-gray-400">
+                    <Handshake className="h-12 w-12 mb-2" />
+                    <div className="text-sm font-medium">Partner {index}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mt-16 text-center">
@@ -36,6 +54,25 @@ const Partners = () => {
           </button>
         </div>
       </div>
+      
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
