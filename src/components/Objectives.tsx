@@ -21,9 +21,27 @@ const Objectives = () => {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-3">Amplify (Paza)</h3>
+
               <p className="text-gray-600">
                 Allow SMEs driving coastal economies to showcase and amplify their work. A pitch deck for startups to access investors and seed fund.
               </p>
+
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  Allow SMEs
+                  driving coastal
+                  economies to
+                  showcase and
+                  amplify their work.
+                </li>
+                <li>
+                  Situate youth at
+                  the center of
+                  change and
+                  improved
+                  livelihoods
+                </li>
+              </ul>
             </div>
           </div>
           
@@ -40,9 +58,17 @@ const Objectives = () => {
               <p className="text-gray-600">
                 Situate youth at the center of change and improved livelihoods. Empower youth with new skills and connect them with opportunities.
               </p>
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  A pitch deck for
+                  startups to
+                  access
+                  investors and
+                  seed fund.
+                </li>
+              </ul>
             </div>
-          </div>
-          
+          </div> 
           <div className="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div className="h-48 overflow-hidden">
               <img 
@@ -56,6 +82,18 @@ const Objectives = () => {
               <p className="text-gray-600">
                 Connect coastal businesses to consumers. Enable collaboration between public and private sector in driving coastal economies.
               </p>
+              <ul className="container mx-auto list-disc text-gray-600">
+                <li>
+                  Public and private
+                  sector in driving
+                  coastal economies
+                </li>
+                <li>
+                  Connect coastal
+                  businesses to
+                  consumers
+                </li>
+              </ul>
             </div>
           </div>
         </div>
