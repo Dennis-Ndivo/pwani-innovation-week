@@ -78,6 +78,7 @@ const Hero = () => {
                 </p>
               </div>
             </div>
+
             
             <div className="flex flex-wrap gap-4 mt-8 animate-fade-in delay-700">
               <a 
@@ -178,6 +179,6 @@ const Hero = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Hero;

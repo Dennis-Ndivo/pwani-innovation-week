@@ -22,7 +22,6 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -40,7 +39,6 @@ const Navbar = () => {
               <h1 className="text-2xl font-bold text-[#F97316]">PIW<span className="text-[#F97316]">2025</span></h1>
             </Link>
           </div>
-          
           <div className="hidden md:block">
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
               <div className="flex items-center space-x-8">
@@ -49,6 +47,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   About
+
                 </Link>
                 <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Schedule
@@ -90,7 +89,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg">

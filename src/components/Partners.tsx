@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Handshake } from 'lucide-react';
 
@@ -66,11 +65,7 @@ const Partners = () => {
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-        
-        .animate-scroll:hover {
-          animation-play-state: paused;
+          animation: scroll 10s linear infinite;
         }
       `}</style>
     </section>

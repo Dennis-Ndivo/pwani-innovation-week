@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Waves, Smartphone, Users } from 'lucide-react';
+import { Globe, UsersRound, Laptop } from 'lucide-react';
 
 const ThematicAreas = () => {
   return (
@@ -21,6 +22,19 @@ const ThematicAreas = () => {
             </div>
             <p className="text-gray-700">
               Explores opportunities for youth and women within sustainable coastal economies, specifically in aquaculture, Cultural & Creative Industries (CCIs), and tourism value chain. Encompasses Blue Economy, Marine Resources, and Climate Action themes.
+              This track, a follow-up to
+              discussions at PIW2024,
+              explores opportunities for
+              youth and women within
+              Sustainable Coastal
+              Economies, specifically in
+              aquaculture (including young
+              mothers in fish, emerging
+              sectors like rging trends in
+              seaweed and fish farming),
+              the Cultural & Creative
+              Industries (CCIs), and the
+              tourism value chain.
             </p>
           </div>
           
@@ -28,11 +42,23 @@ const ThematicAreas = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="p-3 bg-leaf/20 rounded-lg">
                 <Smartphone className="text-leaf h-8 w-8" />
+                <Laptop className="text-leaf h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold text-gray-800">Digital Transformation</h3>
             </div>
             <p className="text-gray-700">
               Empowers coastal communities to harness digital technologies for problem-solving and economic advancement. From mobile apps and AI to blockchain, exploring how tech can disrupt traditional models and unlock new opportunities in the digital gig economy.
+              This track empowers coastal
+              communities to harness
+              digital technologies for
+              problem-solving and
+              economic advancement.
+              From mobile apps and AI to
+              cloud services and
+              blockchain, participants will
+              explore how tech can disrupt
+              traditional models and unlock
+              new opportunities.
             </p>
           </div>
           
