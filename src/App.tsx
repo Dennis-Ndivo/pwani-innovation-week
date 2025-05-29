@@ -16,6 +16,8 @@ import Workshops from "./pages/Workshops";
 import PanelDiscussions from "./pages/PanelDiscussions";
 import NetworkingEvents from "./pages/NetworkingEvents";
 import Exhibitions from "./pages/Exhibitions";
+import PIW2023 from "./pages/PIW2023";
+import PIW2024 from "./pages/PIW2024";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/panel-discussions" element={<PanelDiscussions />} />
           <Route path="/networking-events" element={<NetworkingEvents />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
+          <Route path="/piw-2023" element={<PIW2023 />} />
+          <Route path="/piw-2024" element={<PIW2024 />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -9,7 +9,6 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Pwani Innovation Week</h2>
           <div className="w-24 h-1 bg-ocean mx-auto"></div>
         </div>
-        
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -18,11 +17,13 @@ const About = () => {
             <p className="text-lg text-gray-700 leading-relaxed mt-6">
               The event, which is entering its 6th edition, has over the years transitioned to fit the entrepreneurial and innovation ecosystem of Pwani squarely. This has turned it into a much-awaited annual forum that addresses emerging needs of the region by advocating for synergy-led discourses.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed mt-6">
-              Building on the theme "Pwani Re-imagined: Youth Agency, Innovation & Sustainability of Coastal Economies", this year's event will be re-imagining Pwani within and beyond the SDG goals and Kenya Vision 2030, focusing on homegrown SMEs and untapped opportunities across all coastal economies.
-            </p>
+            <a
+              href="/about"
+              className="inline-block mt-6 px-6 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors duration-300"
+            >
+              Read More
+            </a>
           </div>
-          
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="overflow-hidden rounded-lg">
               <img 

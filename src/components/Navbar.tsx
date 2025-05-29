@@ -56,9 +56,6 @@ const Navbar = () => {
                 <Link to="/speakers" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Speakers
                 </Link>
-                <Link to="/engage" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Engage
-                </Link>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="flex items-center text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                     Past Events
@@ -66,13 +63,19 @@ const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-white shadow-lg border rounded-md z-50">
                     <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
-                      <a href="#" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2023</a>
+                      <Link to="/piw-2023" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2023</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
-                      <a href="#" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2024</a>
+                      <Link to="/piw-2024" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2024</Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+                <Link
+                  to="/engage"
+                  className="text-base font-medium text-white bg-[#F97316] hover:bg-[#ea580c] transition-colors duration-300 px-4 py-2 rounded-md shadow"
+                >
+                  Engage
+                </Link>
               </div>
             </ScrollArea>
           </div>
@@ -122,25 +125,25 @@ const Navbar = () => {
             </Link>
             <Link
               to="/engage"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 bg-[#F97316] hover:text-white hover:bg-[#ea580c] transition-colors duration-300"
               onClick={() => setIsOpen(false)}
             >
               Engage
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/piw-2023"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               PIW 2023
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/piw-2024"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               PIW 2024
-            </a>
+            </Link>
           </div>
         </div>
       )}
