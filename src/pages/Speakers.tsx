@@ -10,66 +10,67 @@ const Speakers = () => {
   const categories = ['All', 'Keynote Speakers', 'Panel Experts', 'Workshop Leaders'];
 
   const speakers = [
-    {
-      name: 'Dr. Amina Hassan',
-      title: 'Minister of Blue Economy',
-      category: 'Keynote Speakers',
-      // image: 'https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&h=400&fit=crop&crop=face',
-      bio: 'Leading Kenya\'s blue economy initiatives with over 15 years of experience in marine conservation and coastal development.',
-      expertise: ['Blue Economy', 'Policy Development', 'Marine Conservation'],
-      achievements: '20+ years in marine policy',
-      company: 'Ministry of Blue Economy'
-    },
-    {
-      name: 'James Mwangi',
-      title: 'Tech Entrepreneur & Investor',
-      category: 'Keynote Speakers',
-      // image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      bio: 'Serial entrepreneur who has built multiple successful tech companies focused on solving African challenges.',
-      expertise: ['Digital Innovation', 'Startup Ecosystem', 'Investment'],
-      achievements: 'Founded 3 successful startups',
-      company: 'Coastal Ventures'
-    },
-    {
-      name: 'Fatuma Said',
-      title: 'Youth Activist & Social Entrepreneur',
-      category: 'Panel Experts',
-      // image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-      bio: 'Championing youth empowerment and climate action across East Africa through innovative community programs.',
-      expertise: ['Youth Empowerment', 'Climate Action', 'Community Development'],
-      achievements: 'UNESCO Youth Ambassador',
-      company: 'Youth for Change Foundation'
-    },
-    {
-      name: 'Prof. David Kimani',
-      title: 'Marine Scientist & Researcher',
-      category: 'Workshop Leaders',
-      // image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-      bio: 'Leading researcher in sustainable aquaculture and marine ecosystem restoration with 25+ years experience.',
-      expertise: ['Aquaculture', 'Marine Biology', 'Sustainability'],
-      achievements: '100+ research publications',
-      company: 'Kenya Marine Institute'
-    },
-    {
-      name: 'Sarah Ochieng',
-      title: 'Digital Marketing Strategist',
-      category: 'Workshop Leaders',
-      image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop&crop=face',
-      bio: 'Helping coastal businesses leverage digital platforms to reach global markets and scale their operations.',
-      expertise: ['Digital Marketing', 'E-commerce', 'Business Strategy'],
-      achievements: 'Scaled 50+ coastal businesses',
-      company: 'Digital Coast Agency'
-    },
-    {
-      name: 'Mohamed Ali',
-      title: 'Cultural Tourism Expert',
-      category: 'Panel Experts',
-      // image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face',
-      bio: 'Preserving and promoting coastal cultures while creating sustainable tourism opportunities for local communities.',
-      expertise: ['Cultural Tourism', 'Heritage Preservation', 'Community Tourism'],
-      achievements: '15+ cultural sites developed',
-      company: 'Coastal Heritage Foundation'
-    }
+    
+    // {
+    //   name: 'Dr. Amina Hassan',
+    //   title: 'Minister of Blue Economy',
+    //   category: 'Keynote Speakers',
+    //   // image: 'https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Leading Kenya\'s blue economy initiatives with over 15 years of experience in marine conservation and coastal development.',
+    //   expertise: ['Blue Economy', 'Policy Development', 'Marine Conservation'],
+    //   achievements: '20+ years in marine policy',
+    //   company: 'Ministry of Blue Economy'
+    // },
+    // {
+    //   name: 'James Mwangi',
+    //   title: 'Tech Entrepreneur & Investor',
+    //   category: 'Keynote Speakers',
+    //   // image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Serial entrepreneur who has built multiple successful tech companies focused on solving African challenges.',
+    //   expertise: ['Digital Innovation', 'Startup Ecosystem', 'Investment'],
+    //   achievements: 'Founded 3 successful startups',
+    //   company: 'Coastal Ventures'
+    // },
+    // {
+    //   name: 'Fatuma Said',
+    //   title: 'Youth Activist & Social Entrepreneur',
+    //   category: 'Panel Experts',
+    //   // image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Championing youth empowerment and climate action across East Africa through innovative community programs.',
+    //   expertise: ['Youth Empowerment', 'Climate Action', 'Community Development'],
+    //   achievements: 'UNESCO Youth Ambassador',
+    //   company: 'Youth for Change Foundation'
+    // },
+    // {
+    //   name: 'Prof. David Kimani',
+    //   title: 'Marine Scientist & Researcher',
+    //   category: 'Workshop Leaders',
+    //   // image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Leading researcher in sustainable aquaculture and marine ecosystem restoration with 25+ years experience.',
+    //   expertise: ['Aquaculture', 'Marine Biology', 'Sustainability'],
+    //   achievements: '100+ research publications',
+    //   company: 'Kenya Marine Institute'
+    // },
+    // {
+    //   name: 'Sarah Ochieng',
+    //   title: 'Digital Marketing Strategist',
+    //   category: 'Workshop Leaders',
+    //   image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Helping coastal businesses leverage digital platforms to reach global markets and scale their operations.',
+    //   expertise: ['Digital Marketing', 'E-commerce', 'Business Strategy'],
+    //   achievements: 'Scaled 50+ coastal businesses',
+    //   company: 'Digital Coast Agency'
+    // },
+    // {
+    //   name: 'Mohamed Ali',
+    //   title: 'Cultural Tourism Expert',
+    //   category: 'Panel Experts',
+    //   // image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face',
+    //   bio: 'Preserving and promoting coastal cultures while creating sustainable tourism opportunities for local communities.',
+    //   expertise: ['Cultural Tourism', 'Heritage Preservation', 'Community Tourism'],
+    //   achievements: '15+ cultural sites developed',
+    //   company: 'Coastal Heritage Foundation'
+    // }
   ];
 
   const audienceTypes = [
