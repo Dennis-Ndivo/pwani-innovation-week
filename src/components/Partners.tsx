@@ -39,9 +39,9 @@ const Partners = () => {
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Join us in shaping the innovation landscape in coastal Kenya. Partner with Pwani Innovation Week 2025 and help us foster creativity, entrepreneurship, and sustainable development.
           </p>
-          <button className="bg-leaf hover:bg-leaf-dark text-white py-3 px-8 rounded-md font-semibold transition-colors duration-300">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-md font-semibold transition-colors duration-300">
             Partnership Opportunities
-          </button>
+            </button>
         </div>
       </div>
 
