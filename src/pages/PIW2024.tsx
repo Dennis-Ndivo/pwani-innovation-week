@@ -51,17 +51,17 @@ const PIW2024 = () => {
     {
       title: "Opening Ceremony",
       description: "Grand opening with cultural performances and keynote addresses from regional leaders",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "public/images/Z50_9796.jpg"
     },
     {
       title: "Youth Innovation Summit",
       description: "Young innovators from Kenya and Tanzania presented groundbreaking solutions",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "public/images/Z50_8689.jpg"
     },
     {
       title: "Cultural Exchange",
       description: "Celebrating the rich cultural heritage of coastal communities",
-      image: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "public/images/DSC_5052.jpg"
     }
   ];
 
@@ -89,7 +89,7 @@ const PIW2024 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-[#F97316]" />
-                <span>Mombasa, Kenya & Tanga, Tanzania</span>
+                <span>Mombasa, Kenya</span>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ const PIW2024 = () => {
           {/* Hero Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-scale-in delay-300">
             <img 
-              src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              src="public/images/Z50_5583.jpg"
               alt="PIW 2024 Event"
               className="w-full h-96 md:h-[500px] object-cover"
             />
@@ -170,12 +170,12 @@ const PIW2024 = () => {
             </div>
             <div className="space-y-6 animate-slide-up delay-300">
               <img 
-                src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="public/images/DSC_5019.jpg"
                 alt="PIW 2024 Cross-border"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="public/images/Z50_5527.jpg"
                 alt="PIW 2024 Culture"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
               />

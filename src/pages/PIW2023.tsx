@@ -79,7 +79,7 @@ const PIW2023 = () => {
           {/* Hero Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-scale-in delay-300">
             <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              src="public/images/DSC_5601.jpg"
               alt="PIW 2023 Event"
               className="w-full h-96 md:h-[500px] object-cover"
             />
@@ -150,12 +150,12 @@ const PIW2023 = () => {
             </div>
             <div className="space-y-6 animate-slide-up delay-300">
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="public/images/J26A0003 (1).jpg"
                 alt="PIW 2023 Innovation"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="public/images/DSC_5665.jpg"
                 alt="PIW 2023 Venue"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
               />
@@ -199,36 +199,36 @@ const PIW2023 = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-6">
               <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/DSC_5674.jpg"
                 alt="PIW 2023 Session"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/DSC_8833.jpg"
                 alt="PIW 2023 Networking"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
               />
             </div>
             <div className="space-y-6">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/J26A9713.jpg"
                 alt="PIW 2023 Exhibition"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/IMG-176.jpg"
                 alt="PIW 2023 Workshop"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
             </div>
             <div className="space-y-6">
               <img 
-                src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/IMG-145.jpg"
                 alt="PIW 2023 Panel"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="public/images/Z50_4804.jpg"
                 alt="PIW 2023 Awards"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
               />

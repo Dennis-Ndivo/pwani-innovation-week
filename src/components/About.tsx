@@ -28,28 +28,28 @@ const About = () => {
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
+                src="public/images/A26I8167.JPG" 
                 alt="Innovation hackathon" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                src="public/images/A26I7994.JPG" 
                 alt="Panel discussions" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
+                src="public/images/A26I7945.JPG" 
                 alt="Plenary sessions" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                src="public/images/A26I1187.JPG" 
                 alt="Networking events" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />

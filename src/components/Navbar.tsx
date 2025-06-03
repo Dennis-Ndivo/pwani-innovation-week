@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -35,8 +34,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-[#F97316]">PIW<span className="text-[#F97316]">2025</span></h1>
+            <Link to="/" className="flex-shrink-0 bg-[#F97316] rounded-md p-1">
+              <img
+                src="public/piw_logo.png"
+                alt="/piw_logo.png"
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
           <div className="hidden md:block">
@@ -47,7 +50,6 @@ const Navbar = () => {
                 </Link>
                 <Link to="/about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   About
-
                 </Link>
                 <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Schedule
@@ -78,7 +80,7 @@ const Navbar = () => {
               </div>
             </ScrollArea>
           </div>
-          
+
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
@@ -89,7 +91,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Mobile menu */}
+      
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

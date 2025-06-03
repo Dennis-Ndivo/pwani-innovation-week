@@ -14,24 +14,15 @@ const Partners = () => {
             Pwani Innovation Week is made possible through the collaboration and support of various organizations committed to fostering innovation and development in the coastal region.
           </p>
         </div>
-        
-        {/* Continuous carousel */}
+
+        {/* Continuous Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
-            {/* First set of partners */}
-            {partners.map((index) => (
-              <div key={`first-${index}`} className="flex-shrink-0 w-64 mx-4">
-                <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-40 card-hover">
-                  <div className="flex flex-col items-center justify-center text-gray-400">
-                    <Handshake className="h-12 w-12 mb-2" />
-                    <div className="text-sm font-medium">Partner {index}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {partners.map((index) => (
-              <div key={`second-${index}`} className="flex-shrink-0 w-64 mx-4">
+          <div className="whitespace-nowrap animate-marquee">
+            {[...partners, ...partners].map((index, i) => (
+              <div
+                key={i}
+                className="inline-block w-64 mx-4 align-top"
+              >
                 <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-40 card-hover">
                   <div className="flex flex-col items-center justify-center text-gray-400">
                     <Handshake className="h-12 w-12 mb-2" />
@@ -42,7 +33,7 @@ const Partners = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Become a Partner</h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -53,19 +44,21 @@ const Partners = () => {
           </button>
         </div>
       </div>
-      
+
       <style>{`
-        @keyframes scroll {
+        @keyframes marquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(0%);
           }
           100% {
             transform: translateX(-50%);
           }
         }
-        
-        .animate-scroll {
-          animation: scroll 10s linear infinite;
+
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 20s linear infinite;
         }
       `}</style>
     </section>

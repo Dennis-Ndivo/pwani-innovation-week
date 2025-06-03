@@ -109,7 +109,7 @@ const About = () => {
             <div className="relative animate-fade-in delay-300">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img 
-                  src="/lovable-uploads/335e424b-2368-4c3a-ac82-f4e2ad1f7080.png" 
+                  src="public/images/image1 (3).jpg" 
                   alt="PIW 2025 participants" 
                   className="w-full h-auto"
                 />
@@ -125,7 +125,7 @@ const About = () => {
             <div className="order-2 lg:order-1 relative animate-fade-in">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img 
-                  src="/lovable-uploads/72852643-f05b-4c37-94ac-e3de431475be.png" 
+                  src="public/images/A26I8176.JPG" 
                   alt="Breaking down the theme" 
                   className="w-full h-auto"
                 />
