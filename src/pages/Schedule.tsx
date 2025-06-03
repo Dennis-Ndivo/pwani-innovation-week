@@ -236,10 +236,10 @@ const Schedule = () => {
                       </div>
                       
                       <div className="lg:ml-6">
-                        <button className="bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:shadow-lg transition-all duration-300 hover:scale-105">
+                        {/* <button className="bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:shadow-lg transition-all duration-300 hover:scale-105">
                           Learn More
                           <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>
