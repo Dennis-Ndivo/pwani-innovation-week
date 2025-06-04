@@ -51,9 +51,9 @@ const Navbar = () => {
                 <Link to="/about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   About
                 </Link>
-                <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                {/* <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Schedule
-                </Link>
+                </Link> */}
                 <Link to="/speakers" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Speakers
                 </Link>
