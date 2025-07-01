@@ -5,7 +5,7 @@ import { FaXTwitter, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa6
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#F97316] text-white"> {/* Changed from bg-gray-900 to orange */}
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
@@ -97,14 +97,14 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="bg-gray-950 py-6">
+      <div className="bg-[#ea580c] py-6"> {/* Changed from bg-gray-950 to a darker orange */}
         <div className="container mx-auto px-4">
           <div className="md:flex md:items-center md:justify-between text-sm">
-            <div className="text-center md:text-left text-gray-400">
+            <div className="text-center md:text-left text-gray-200">
               <p>&copy; {new Date().getFullYear()} Pwani Innovation Week. All rights reserved.</p>
             </div>
             <div className="mt-4 md:mt-0 text-center md:text-right">
-              <p className="text-gray-400">Organized by <a className='underline' href='https://swahilipothub.co.ke'>Swahilipot Hub Foundation</a></p>
+              <p className="text-gray-200">Organized by <a className='underline' href='https://swahilipothub.co.ke'>Swahilipot Hub Foundation</a></p>
             </div>
           </div>
         </div>

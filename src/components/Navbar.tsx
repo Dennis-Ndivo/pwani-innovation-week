@@ -1,8 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +21,6 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -30,33 +34,53 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <img src='/piw_logo.png' height={30} width={150} className='bg-[#F97316] rounded-md' alt='PIW Logo'/>
+            <Link to="/" className="flex-shrink-0 bg-[#F97316] rounded-md p-1">
+              <img
+                src="public/piw_logo.png"
+                alt="/piw_logo.png"
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
-          
           <div className="hidden md:block">
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
               <div className="flex items-center space-x-8">
                 <Link to="/" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   Home
                 </Link>
-                <a href="#about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                <Link to="/about" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
                   About
-                </a>
-                <a href="#objectives" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Objectives
-                </a>
-                <a href="#themes" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Themes
-                </a>
-                {/*<a href="#tickets" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
-                  Tickets
-                </a>*/}
+                </Link>
+                {/* <Link to="/schedule" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                  Schedule
+                </Link> */}
+                <Link to="/speakers" className="text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                  Speakers
+                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center text-base font-medium text-gray-800 hover:text-[#F97316] transition-colors duration-300">
+                    Past Events
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-white shadow-lg border rounded-md z-50">
+                    <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
+                      <Link to="/piw-2023" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2023</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-gray-50 cursor-pointer">
+                      <Link to="/piw-2024" className="block w-full text-gray-800 hover:text-[#F97316]">PIW 2024</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Link
+                  to="/engage"
+                  className="text-base font-medium text-white bg-[#F97316] hover:bg-[#ea580c] transition-colors duration-300 px-4 py-2 rounded-md shadow"
+                >
+                  Engage
+                </Link>
               </div>
             </ScrollArea>
           </div>
-          
+
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
@@ -67,8 +91,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
+      
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -79,34 +102,48 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               About
-            </a>
-            <a
-              href="#objectives"
+            </Link>
+            <Link
+              to="/schedule"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Objectives
-            </a>
-            <a
-              href="#themes"
+              Schedule
+            </Link>
+            <Link
+              to="/speakers"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Themes
-            </a>
-            {/*<a
-              href="#tickets"
+              Speakers
+            </Link>
+            <Link
+              to="/engage"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 bg-[#F97316] hover:text-white hover:bg-[#ea580c] transition-colors duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              Engage
+            </Link>
+            <Link
+              to="/piw-2023"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
-              Tickets
-            </a>*/}
+              PIW 2023
+            </Link>
+            <Link
+              to="/piw-2024"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              PIW 2024
+            </Link>
           </div>
         </div>
       )}
