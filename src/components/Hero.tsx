@@ -122,8 +122,8 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Better Countdown Display */}
-            <div className="mt-6 grid grid-cols-4 gap-4 text-center max-w-md">
+            {/* Countdown Display - Responsive for Mobile */}
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center max-w-xs sm:max-w-md mx-auto w-full">
               {[
                 { label: "Days", value: countdown.days },
                 { label: "Hours", value: countdown.hours },
@@ -132,10 +132,10 @@ const Hero = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white border-4 border-[#F97316] rounded-xl p-4 shadow-lg"
+                  className="bg-white border-2 sm:border-4 border-[#F97316] rounded-xl p-3 sm:p-4 shadow-lg flex flex-col items-center justify-center min-w-[70px]"
                 >
-                  <p className="text-4xl font-extrabold text-[#F97316]">{item.value}</p>
-                  <p className="text-sm font-semibold text-gray-600 uppercase">{item.label}</p>
+                  <p className="text-2xl sm:text-4xl font-extrabold text-[#F97316]">{item.value}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-600 uppercase">{item.label}</p>
                 </div>
               ))}
             </div>

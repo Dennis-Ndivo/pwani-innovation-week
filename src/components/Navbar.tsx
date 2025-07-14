@@ -109,13 +109,13 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link
+            {/* <Link
               to="/schedule"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               Schedule
-            </Link>
+            </Link> */}
             <Link
               to="/speakers"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#F97316] hover:bg-gray-50"
