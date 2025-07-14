@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 bg-[#F97316] rounded-md p-1">
               <img
-                src="public/piw_logo.png"
+                src="/piw_logo.png"
                 alt="/piw_logo.png"
                 className="h-10 w-auto"
               />

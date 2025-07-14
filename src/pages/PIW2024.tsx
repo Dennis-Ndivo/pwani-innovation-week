@@ -51,17 +51,17 @@ const PIW2024 = () => {
     {
       title: "Opening Ceremony",
       description: "Grand opening with cultural performances and keynote addresses from regional leaders",
-      image: "public/images/Z50_9796.jpg"
+      image: "/images/Z50_9796.jpg"
     },
     {
       title: "Youth Innovation Summit",
       description: "Young innovators from Kenya and Tanzania presented groundbreaking solutions",
-      image: "public/images/Z50_8689.jpg"
+      image: "/images/Z50_8689.jpg"
     },
     {
       title: "Cultural Exchange",
       description: "Celebrating the rich cultural heritage of coastal communities",
-      image: "public/images/DSC_5052.jpg"
+      image: "/images/DSC_5052.jpg"
     }
   ];
 
@@ -97,7 +97,7 @@ const PIW2024 = () => {
           {/* Hero Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-scale-in delay-300">
             <img 
-              src="public/images/Z50_5583.jpg"
+              src="/images/Z50_5583.jpg"
               alt="PIW 2024 Event"
               className="w-full h-96 md:h-[500px] object-cover"
             />
@@ -170,12 +170,12 @@ const PIW2024 = () => {
             </div>
             <div className="space-y-6 animate-slide-up delay-300">
               <img 
-                src="public/images/DSC_5019.jpg"
+                src="/images/DSC_5019.jpg"
                 alt="PIW 2024 Cross-border"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
               <img 
-                src="public/images/Z50_5527.jpg"
+                src="/images/Z50_5527.jpg"
                 alt="PIW 2024 Culture"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
               />
