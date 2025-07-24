@@ -357,12 +357,18 @@ const Engage = () => {
             Choose your engagement level and join us in transforming coastal economies through innovation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Register as Participant
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-[#F97316] transition-all duration-300 hover:scale-105">
-              Apply as Speaker
-            </button>
+            {/*<button className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">*/}
+            {/*  Register as Participant*/}
+            {/*</button>*/}
+                <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfEU5ki80iDu6wnRoAz0PMbdOa7unYahXXCyXrr1SrKqHeqJg/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-[#F97316] transition-all duration-300 hover:scale-105">
+                  Apply as Speaker
+                </button>
+              </a>
           </div>
         </div>
       </section>

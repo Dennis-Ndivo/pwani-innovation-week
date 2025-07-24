@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import {Link} from "react-router-dom";
 
 const Hero = () => {
   const { ref, inView } = useInView({
@@ -107,19 +108,19 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8 animate-fade-in delay-700">
-              <a
-                href="#tickets"
+              <Link
+                to="/engage"
                 className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-md text-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
-                Register Now <ArrowRight size={20} />
-              </a>
+                Be Part of PIW 2025 <ArrowRight size={20} />
+              </Link>
 
-              <a
-                href="#about"
-                className="border-2 border-[#F97316] text-[#F97316] hover:bg-[#F97316] hover:text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
-              >
-                Learn More
-              </a>
+              {/*<a*/}
+              {/*  href="#about"*/}
+              {/*  className="border-2 border-[#F97316] text-[#F97316] hover:bg-[#F97316] hover:text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"*/}
+              {/*>*/}
+              {/*  Learn More*/}
+              {/*</a>*/}
             </div>
 
             {/* Countdown Display - Responsive for Mobile */}
