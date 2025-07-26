@@ -18,6 +18,9 @@ import Exhibitions from "./pages/Exhibitions";
 import PIW2023 from "./pages/PIW2023";
 import PIW2024 from "./pages/PIW2024";
 import SpeakerApplicationForm from "@/pages/SpeakerApplicationForm.tsx";
+import Tickets from "@/pages/Tickets.tsx";
+import Vendors from "@/pages/Vendors.tsx";
+import Inquiries from "@/pages/Inquiries.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,8 +35,11 @@ const App = () => (
           <Route path="/about" element={<About />} />
           {/* <Route path="/schedule" element={<Schedule />} /> */}
           <Route path="/speakers" element={<Speakers />} />
+          <Route path="/tickets" element={<Tickets />} />
           <Route path="/speaking/apply" element={<SpeakerApplicationForm />} />
           <Route path="/engage" element={<Engage />} />
+          <Route path="/vendors" element={<Vendors />} />
+          <Route path="/contact" element={<Inquiries />} />
           <Route path="/hackathon" element={<Hackathon />} />
           <Route path="/plenary-sessions" element={<PlenarySessions />} />
           <Route path="/workshops" element={<Workshops />} />
