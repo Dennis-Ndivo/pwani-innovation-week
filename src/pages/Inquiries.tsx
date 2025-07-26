@@ -26,7 +26,7 @@ const Inquiries = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:3000/api/inquiries', {
+        const res = await fetch('https://piw-express.onrender.com/api/inquiries', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form),

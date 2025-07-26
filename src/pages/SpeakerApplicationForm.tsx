@@ -38,7 +38,7 @@ const Speakers = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:3000/api/speakers', {
+            const res = await fetch('https://piw-express.onrender.com/api/speakers', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
