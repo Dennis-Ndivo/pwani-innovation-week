@@ -1,58 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Award, Globe, Briefcase, Users, LinkedinIcon, TwitterIcon, Mail } from 'lucide-react';
+import { Globe, Briefcase, Users } from 'lucide-react';
 
 const Speakers = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [formData, setFormData] = useState({
-    email: '',
-    phone_number: '',
-    first_name: '',
-    last_name: '',
-    middle_name: '',
-    gender: 'male',
-    country: '',
-    location: 'kenya - coast',
-    thematic_area: 'Youth Agency',
-    session_type: 'Panel Discussions',
-    session_title: '',
-    session_description: '',
-    target_audience: 'beginners',
-    target_type: 'non-technical',
-    audience_engagement: 'Q and A',
-    agree_terms: false,
-    agree_communications: false,
-    delivery_type: 'physical'
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const res = await fetch('http://localhost:3000/api/speakers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      if (res.ok) setSubmitted(true);
-      else alert('Submission failed');
-    } catch (err) {
-      alert('Network error');
-    }
-  };
-
   const categories = ['All', 'Keynote Speakers', 'Panel Experts', 'Workshop Leaders'];
-
-  const speakers: any[] = [];
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const audienceTypes = [
     {
@@ -78,92 +32,109 @@ const Speakers = () => {
     }
   ];
 
-  const filteredSpeakers = selectedCategory === 'All'
-      ? speakers
-      : speakers.filter(speaker => speaker.category === selectedCategory);
-
-  const getOptions = (field: string) => {
-    const options: Record<string, string[]> = {
-      gender: ['male', 'female'],
-      location: ['kenya - coast', 'kenya - others', 'other'],
-      thematic_area: ['Sustainable Coastal', 'Youth Agency', 'Digital Track'],
-      session_type: ['Keynote Address', 'Panel Discussions', 'Workshops', 'Masterclass'],
-      target_audience: ['experience', 'beginners', 'amateur'],
-      target_type: ['technical', 'non-technical'],
-      audience_engagement: ['Q and A', 'Demo', 'Presentations', 'Skit'],
-      delivery_type: ['physical', 'virtual - live', 'virtual - prerecorded']
-    };
-    return options[field] || [];
-  };
-
   return (
       <div className="min-h-screen">
         <Navbar />
-        {/* Other sections omitted for brevity */}
 
-        {/* Speaker Application Form */}
+        <div className="pt-20 bg-gradient-to-br from-purple-50 via-purple-100/50 to-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="section-container py-20 relative z-10">
+            <div className="text-center animate-fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                Apply to <span className="gradient-text">Speak</span>
+              </h1>
+              <div className="w-24 h-1 bg-[#F97316] mx-auto mb-6"></div>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+                Inspiring leaders, innovators, and changemakers driving coastal transformation
+              </p>
+              <Link
+                  to="/speaking/apply"
+                  className="bg-[#F97316] hover:bg-[#ea580c] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 inline-block"
+              >
+                Apply to Speak
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <section className="py-20 bg-white">
-          <div className="section-container max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">Apply to Speak</h2>
-            {submitted ? (
-                <div className="text-center text-green-600 font-semibold">
-                  Thank you! Your application has been received.
-                </div>
-            ) : (
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
-                  {['first_name', 'middle_name', 'last_name', 'email', 'phone_number', 'country', 'session_title'].map(field => (
-                      <input
-                          key={field}
-                          name={field}
-                          type="text"
-                          placeholder={field.replace('_', ' ').toUpperCase()}
-                          className="border p-3 rounded"
-                          value={(formData as any)[field]}
-                          onChange={handleChange}
-                          required={field !== 'middle_name'}
-                      />
-                  ))}
+          <div className="section-container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">The Audience</h2>
+              <div className="w-24 h-1 bg-[#F97316] mx-auto mb-6"></div>
+              <p className="text-xl text-gray-700">Meet the diverse stakeholders driving coastal transformation</p>
+            </div>
 
-                  <textarea
-                      name="session_description"
-                      placeholder="Session Description"
-                      className="border p-3 rounded"
-                      value={formData.session_description}
-                      onChange={handleChange}
-                      required
-                  />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {audienceTypes.map((type, index) => (
+                  <div
+                      key={index}
+                      className="text-center bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                      style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${type.color} rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300`}>
+                      <type.icon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">{type.title}</h3>
+                    <p className="text-gray-700 mb-4 leading-relaxed">{type.description}</p>
+                    <div className="inline-block bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      {type.stats}
+                    </div>
+                  </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                  {['gender', 'location', 'thematic_area', 'session_type', 'target_audience', 'target_type', 'audience_engagement', 'delivery_type'].map(select => (
-                      <select
-                          key={select}
-                          name={select}
-                          className="border p-3 rounded"
-                          value={(formData as any)[select]}
-                          onChange={handleChange}
-                          required
-                      >
-                        <option disabled value="">Select {select.replace('_', ' ')}</option>
-                        {getOptions(select).map(opt => (
-                            <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                      </select>
-                  ))}
-
-                  <label className="flex items-center gap-2">
-                    <input type="checkbox" name="agree_terms" checked={formData.agree_terms} onChange={handleChange} required />
-                    I agree to the terms
-                  </label>
-
-                  <label className="flex items-center gap-2">
-                    <input type="checkbox" name="agree_communications" checked={formData.agree_communications} onChange={handleChange} required />
-                    I agree to receive communications
-                  </label>
-
-                  <button type="submit" className="bg-[#F97316] text-white py-3 px-6 rounded hover:shadow-lg">
-                    Submit Application
+        <section className="py-12 bg-gray-50 border-b">
+          <div className="section-container">
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((category) => (
+                  <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+                          selectedCategory === category
+                              ? 'bg-[#F97316] text-white shadow-lg'
+                              : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md'
+                      }`}
+                  >
+                    {category}
                   </button>
-                </form>
-            )}
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="section-container text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+              Speakers Coming Soon
+            </h2>
+            <p className="text-xl text-gray-700 max-w-xl mx-auto">
+              We’re curating an amazing lineup of speakers. Stay tuned!
+            </p>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-to-br from-[#F97316] to-[#EA580C] text-white">
+          <div className="section-container text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Want to Speak at PIW 2025?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Join our community of thought leaders and share your expertise with coastal innovators and changemakers.
+            </p>
+            <Link
+                to="/speaking/apply"
+                className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-block"
+            >
+              Apply to Speak
+            </Link>
           </div>
         </section>
 

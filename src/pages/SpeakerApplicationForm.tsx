@@ -1,103 +1,175 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import Navbar from '@/components/Navbar.tsx';
-import Footer from '@/components/Footer.tsx';
-import { useNavigate } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { Award, Globe, Briefcase, Users, LinkedinIcon, TwitterIcon, Mail } from 'lucide-react';
 
-const SpeakerApplicationForm = () => {
-    const navigate = useNavigate();
+const Speakers = () => {
+    const [selectedCategory, setSelectedCategory] = useState('All');
     const [formData, setFormData] = useState({
         email: '',
         phone_number: '',
         first_name: '',
         last_name: '',
         middle_name: '',
-        gender: '',
+        gender: 'male',
         country: '',
-        location: '',
-        thematic_area: '',
-        session_type: '',
+        location: 'kenya - coast',
+        thematic_area: 'Youth Agency',
+        session_type: 'Panel Discussions',
         session_title: '',
         session_description: '',
-        target_audience: '',
-        target_type: '',
-        audience_engagement: '',
+        target_audience: 'beginners',
+        target_type: 'non-technical',
+        audience_engagement: 'Q and A',
         agree_terms: false,
         agree_communications: false,
-        delivery_type: ''
+        delivery_type: 'physical'
     });
+    const [submitted, setSubmitted] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value, type, checked } = e.target;
-        setFormData({
-            ...formData,
+        setFormData(prev => ({
+            ...prev,
             [name]: type === 'checkbox' ? checked : value
-        });
+        }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/api/speakers', formData);
-            navigate('/speaker-success');
-        } catch (error) {
-            alert(error.response?.data?.error || 'Submission failed');
+            const res = await fetch('http://localhost:3000/api/speakers', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            if (res.ok) setSubmitted(true);
+            else alert('Submission failed');
+        } catch (err) {
+            alert('Network error');
         }
+    };
+
+    const categories = ['All', 'Keynote Speakers', 'Panel Experts', 'Workshop Leaders'];
+
+    const speakers: any[] = [];
+
+    const audienceTypes = [
+        {
+            title: 'Youth',
+            description: 'The essential cog in the PIW machine as partners and not mere beneficiaries. The event is youth-driven and interventions are geared towards building a resilient and youthful workforce.',
+            icon: Users,
+            color: 'from-blue-500 to-blue-600',
+            stats: '60% of participants'
+        },
+        {
+            title: 'Public & Private Sector',
+            description: 'The vital enablers and investors of a re-imagined Pwani. Providing a platform for collaboration, knowledge sharing, and identifying strategic investment opportunities.',
+            icon: Briefcase,
+            color: 'from-green-500 to-green-600',
+            stats: '25% of participants'
+        },
+        {
+            title: 'Community Leaders',
+            description: 'Coastal communities as stewards of natural resources. With deliberate discussions on aquaculture, cultural tourism and agriculture to unlock new economic pathways.',
+            icon: Globe,
+            color: 'from-orange-500 to-orange-600',
+            stats: '15% of participants'
+        }
+    ];
+
+    const filteredSpeakers = selectedCategory === 'All'
+        ? speakers
+        : speakers.filter(speaker => speaker.category === selectedCategory);
+
+    const getOptions = (field: string) => {
+        const options: Record<string, string[]> = {
+            gender: ['male', 'female'],
+            location: ['kenya - coast', 'kenya - others', 'other'],
+            thematic_area: ['Sustainable Coastal', 'Youth Agency', 'Digital Track'],
+            session_type: ['Keynote Address', 'Panel Discussions', 'Workshops', 'Masterclass'],
+            target_audience: ['experience', 'beginners', 'amateur'],
+            target_type: ['technical', 'non-technical'],
+            audience_engagement: ['Q and A', 'Demo', 'Presentations', 'Skit'],
+            delivery_type: ['physical', 'virtual - live', 'virtual - prerecorded']
+        };
+        return options[field] || [];
     };
 
     return (
         <div className="min-h-screen">
             <Navbar />
-            <div className="section-container py-20">
-                <h1 className="text-3xl font-bold mb-6 text-center">Speaker Application Form</h1>
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {Object.keys(formData).map((key) => (
-                        key !== 'agree_terms' && key !== 'agree_communications' ? (
-                            <input
-                                key={key}
-                                name={key}
-                                type="text"
-                                placeholder={key.replace(/_/g, ' ')}
-                                value={formData[key]}
-                                onChange={handleChange}
+            {/* Other sections omitted for brevity */}
+
+            {/* Speaker Application Form */}
+            <section className="py-20 bg-white">
+                <div className="section-container max-w-3xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-6 text-center">Apply to Speak</h2>
+                    {submitted ? (
+                        <div className="text-center text-green-600 font-semibold">
+                            Thank you! Your application has been received.
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
+                            {['first_name', 'middle_name', 'last_name', 'email', 'phone_number', 'country', 'session_title'].map(field => (
+                                <input
+                                    key={field}
+                                    name={field}
+                                    type="text"
+                                    placeholder={field.replace('_', ' ').toUpperCase()}
+                                    className="border p-3 rounded"
+                                    value={(formData as any)[field]}
+                                    onChange={handleChange}
+                                    required={field !== 'middle_name'}
+                                />
+                            ))}
+
+                            <textarea
+                                name="session_description"
+                                placeholder="Session Description"
                                 className="border p-3 rounded"
+                                value={formData.session_description}
+                                onChange={handleChange}
                                 required
                             />
-                        ) : null
-                    ))}
 
-                    <label className="flex items-center col-span-2">
-                        <input
-                            type="checkbox"
-                            name="agree_terms"
-                            checked={formData.agree_terms}
-                            onChange={handleChange}
-                            className="mr-2"
-                            required
-                        />
-                        I agree to the terms
-                    </label>
+                            {['gender', 'location', 'thematic_area', 'session_type', 'target_audience', 'target_type', 'audience_engagement', 'delivery_type'].map(select => (
+                                <select
+                                    key={select}
+                                    name={select}
+                                    className="border p-3 rounded"
+                                    value={(formData as any)[select]}
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option disabled value="">Select {select.replace('_', ' ')}</option>
+                                    {getOptions(select).map(opt => (
+                                        <option key={opt} value={opt}>{opt}</option>
+                                    ))}
+                                </select>
+                            ))}
 
-                    <label className="flex items-center col-span-2">
-                        <input
-                            type="checkbox"
-                            name="agree_communications"
-                            checked={formData.agree_communications}
-                            onChange={handleChange}
-                            className="mr-2"
-                            required
-                        />
-                        I agree to receive communications
-                    </label>
+                            <label className="flex items-center gap-2">
+                                <input type="checkbox" name="agree_terms" checked={formData.agree_terms} onChange={handleChange} required />
+                                I agree to the terms
+                            </label>
 
-                    <button type="submit" className="col-span-2 bg-[#F97316] text-white py-3 rounded font-semibold hover:shadow-lg">
-                        Submit Application
-                    </button>
-                </form>
-            </div>
+                            <label className="flex items-center gap-2">
+                                <input type="checkbox" name="agree_communications" checked={formData.agree_communications} onChange={handleChange} required />
+                                I agree to receive communications
+                            </label>
+
+                            <button type="submit" className="bg-[#F97316] text-white py-3 px-6 rounded hover:shadow-lg">
+                                Submit Application
+                            </button>
+                        </form>
+                    )}
+                </div>
+            </section>
+
             <Footer />
         </div>
     );
 };
 
-export default SpeakerApplicationForm;
+export default Speakers;
