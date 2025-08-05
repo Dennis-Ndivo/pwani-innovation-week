@@ -1,6 +1,10 @@
 name: Vite Build Check
 
 on:
+  push:
+    branches:
+      - main
+      - master
   pull_request:
     branches:
       - main
