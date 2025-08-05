@@ -1,8 +1,5 @@
-
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Calendar, Clock, MapPin, Users, ArrowRight, Filter } from 'lucide-react';
+import React, {useState} from 'react';
+import {Calendar, Clock, Filter, MapPin, Users} from 'lucide-react';
 
 const Schedule = () => {
   const [selectedDay, setSelectedDay] = useState('Day 1');
@@ -106,21 +103,22 @@ const Schedule = () => {
     return colors[track] || 'from-orange-500 to-orange-600';
   };
 
-  const filteredSessions = selectedTrack === 'All' 
+  const filteredSessions = selectedTrack === 'All'
     ? scheduleData[selectedDay] || []
     : (scheduleData[selectedDay] || []).filter(session => session.track === selectedTrack);
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-      
+
       {/* Hero Section */}
       <div className="pt-20 bg-gradient-to-br from-blue-50 via-blue-100/50 to-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div
+            className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
+          <div
+            className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
-        
+
         <div className="section-container py-20 relative z-10">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
@@ -150,7 +148,7 @@ const Schedule = () => {
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-4 h-4"/>
                   {day}
                   <span className="text-sm opacity-75">Oct {27 + index}</span>
                 </div>
@@ -170,7 +168,7 @@ const Schedule = () => {
                     : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
                 }`}
               >
-                <Filter className="w-3 h-3 inline mr-1" />
+                <Filter className="w-3 h-3 inline mr-1"/>
                 {track}
               </button>
             ))}
@@ -193,48 +191,49 @@ const Schedule = () => {
 
             <div className="space-y-6">
               {filteredSessions.map((session, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 animate-fade-in"
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  style={{animationDelay: `${index * 150}ms`}}
                 >
                   <div className="p-6">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${getTrackColor(session.track)}`}>
+                          <div
+                            className={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${getTrackColor(session.track)}`}>
                             {session.track}
                           </div>
                           <div className="flex items-center text-gray-500 text-sm">
-                            <Users className="w-4 h-4 mr-1" />
+                            <Users className="w-4 h-4 mr-1"/>
                             {session.attendees}
                           </div>
                         </div>
-                        
+
                         <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">
                           {session.title}
                         </h3>
-                        
+
                         <p className="text-gray-600 mb-4">
                           {session.description}
                         </p>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                           <div className="flex items-center text-gray-600">
-                            <Clock className="w-4 h-4 mr-2 text-[#F97316]" />
+                            <Clock className="w-4 h-4 mr-2 text-[#F97316]"/>
                             {session.time}
                           </div>
                           <div className="flex items-center text-gray-600">
-                            <MapPin className="w-4 h-4 mr-2 text-[#F97316]" />
+                            <MapPin className="w-4 h-4 mr-2 text-[#F97316]"/>
                             {session.location}
                           </div>
                           <div className="flex items-center text-gray-600">
-                            <Users className="w-4 h-4 mr-2 text-[#F97316]" />
+                            <Users className="w-4 h-4 mr-2 text-[#F97316]"/>
                             {session.speaker}
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="lg:ml-6">
                         {/* <button className="bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:shadow-lg transition-all duration-300 hover:scale-105">
                           Learn More
@@ -243,7 +242,7 @@ const Schedule = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className={`h-2 bg-gradient-to-r ${getTrackColor(session.track)}`}></div>
                 </div>
               ))}
@@ -252,7 +251,7 @@ const Schedule = () => {
             {filteredSessions.length === 0 && (
               <div className="text-center py-12">
                 <div className="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-                  <Calendar className="w-12 h-12 text-gray-400" />
+                  <Calendar className="w-12 h-12 text-gray-400"/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">No sessions found</h3>
                 <p className="text-gray-500">Try selecting a different day or track filter.</p>
@@ -271,13 +270,13 @@ const Schedule = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Register now to secure your spot at Pwani Innovation Week 2025 and be part of the coastal transformation.
           </p>
-          <button className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button
+            className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
             Register Now
           </button>
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

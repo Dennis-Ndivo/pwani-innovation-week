@@ -1,16 +1,12 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Users } from 'lucide-react';
+import {Users} from 'lucide-react';
 
 const NetworkingEvents = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="section-container pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <Users className="w-16 h-16 mx-auto text-[#F97316] mb-6" />
+          <Users className="w-16 h-16 mx-auto text-[#F97316] mb-6"/>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Networking Events</h1>
           <p className="text-lg text-gray-600 mb-8">
             Connect with fellow innovators, entrepreneurs, and industry leaders in our
@@ -28,7 +24,6 @@ const NetworkingEvents = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,18 +1,15 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, Lightbulb, Target, Award } from 'lucide-react';
+import {Card, CardContent} from '@/components/ui/card';
+import {Badge} from '@/components/ui/badge';
+import {Award, Calendar, Lightbulb, MapPin, Target, Users} from 'lucide-react';
 
 const PIW2023 = () => {
   const highlights = [
-    { number: "1,500+", label: "Participants" },
-    { number: "50+", label: "Speakers" },
-    { number: "25", label: "Sessions" },
-    { number: "15", label: "Startups Pitched" },
-    { number: "5", label: "Days of Innovation" }
+    {number: "1,500+", label: "Participants"},
+    {number: "50+", label: "Speakers"},
+    {number: "25", label: "Sessions"},
+    {number: "15", label: "Startups Pitched"},
+    {number: "5", label: "Days of Innovation"}
   ];
 
   const keyTopics = [
@@ -49,8 +46,7 @@ const PIW2023 = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
-      <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -66,11 +62,11 @@ const PIW2023 = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-lg text-gray-700">
               <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-[#F97316]" />
+                <Calendar className="h-5 w-5 text-[#F97316]"/>
                 <span>October 23-27, 2023</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-[#F97316]" />
+                <MapPin className="h-5 w-5 text-[#F97316]"/>
                 <span>Mombasa, Kenya</span>
               </div>
             </div>
@@ -78,7 +74,7 @@ const PIW2023 = () => {
 
           {/* Hero Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-scale-in delay-300">
-            <img 
+            <img
               src="/images/DSC_5601.jpg"
               alt="PIW 2023 Event"
               className="w-full h-96 md:h-[500px] object-cover"
@@ -100,10 +96,10 @@ const PIW2023 = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {highlights.map((stat, index) => (
-              <div 
+              <div
                 key={index}
                 className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#F97316]/10 to-blue-50 card-hover animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{animationDelay: `${index * 100}ms`}}
               >
                 <div className="text-3xl md:text-4xl font-bold text-[#F97316] mb-2">
                   {stat.number}
@@ -124,22 +120,22 @@ const PIW2023 = () => {
                 About <span className="gradient-text">PIW 2023</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                The 4th edition of Pwani Innovation Week focused on catalyzing innovation and entrepreneurship 
-                in coastal Kenya. The event brought together young entrepreneurs, investors, policymakers, 
-                and development partners to explore opportunities in the blue economy, digital transformation, 
+                The 4th edition of Pwani Innovation Week focused on catalyzing innovation and entrepreneurship
+                in coastal Kenya. The event brought together young entrepreneurs, investors, policymakers,
+                and development partners to explore opportunities in the blue economy, digital transformation,
                 and sustainable development.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                PIW 2023 served as a platform for knowledge sharing, networking, and showcasing innovative 
+                PIW 2023 served as a platform for knowledge sharing, networking, and showcasing innovative
                 solutions that address local challenges while creating economic opportunities for coastal communities.
               </p>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-gray-800">Key Focus Areas:</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {keyTopics.map((topic, index) => (
-                    <Badge 
+                    <Badge
                       key={index}
-                      variant="outline" 
+                      variant="outline"
                       className="p-2 justify-start text-sm border-[#F97316] text-[#F97316]"
                     >
                       {topic}
@@ -149,12 +145,12 @@ const PIW2023 = () => {
               </div>
             </div>
             <div className="space-y-6 animate-slide-up delay-300">
-              <img 
+              <img
                 src="/images/J26A0003 (1).jpg"
                 alt="PIW 2023 Innovation"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
-              <img 
+              <img
                 src="/images/DSC_5665.jpg"
                 alt="PIW 2023 Venue"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
@@ -172,14 +168,14 @@ const PIW2023 = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 text-center card-hover animate-scale-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+                style={{animationDelay: `${index * 150}ms`}}
               >
                 <CardContent className="p-0">
                   <div className="bg-[#F97316] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <achievement.icon className="h-8 w-8 text-white" />
+                    <achievement.icon className="h-8 w-8 text-white"/>
                   </div>
                   <h3 className="text-lg font-semibold mb-3">{achievement.title}</h3>
                   <p className="text-gray-600">{achievement.description}</p>
@@ -198,36 +194,36 @@ const PIW2023 = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-6">
-              <img 
+              <img
                 src="/images/DSC_5674.jpg"
                 alt="PIW 2023 Session"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
-              <img 
+              <img
                 src="/images/DSC_8833.jpg"
                 alt="PIW 2023 Networking"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
               />
             </div>
             <div className="space-y-6">
-              <img 
+              <img
                 src="/images/J26A9713.jpg"
                 alt="PIW 2023 Exhibition"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
               />
-              <img 
+              <img
                 src="/images/IMG-176.jpg"
                 alt="PIW 2023 Workshop"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
             </div>
             <div className="space-y-6">
-              <img 
+              <img
                 src="/images/IMG-145.jpg"
                 alt="PIW 2023 Panel"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
               />
-              <img 
+              <img
                 src="/images/Z50_4804.jpg"
                 alt="PIW 2023 Awards"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover card-hover"
@@ -236,8 +232,6 @@ const PIW2023 = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

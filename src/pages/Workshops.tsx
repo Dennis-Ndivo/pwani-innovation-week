@@ -1,16 +1,12 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Wrench } from 'lucide-react';
+import {Wrench} from 'lucide-react';
 
 const Workshops = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="section-container pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <Wrench className="w-16 h-16 mx-auto text-[#F97316] mb-6" />
+          <Wrench className="w-16 h-16 mx-auto text-[#F97316] mb-6"/>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Workshops</h1>
           <p className="text-lg text-gray-600 mb-8">
             Participate in hands-on workshops led by industry experts. Gain practical skills
@@ -28,7 +24,6 @@ const Workshops = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

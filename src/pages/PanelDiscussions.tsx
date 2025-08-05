@@ -1,16 +1,12 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { PanelLeft } from 'lucide-react';
+import {PanelLeft} from 'lucide-react';
 
 const PanelDiscussions = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="section-container pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <PanelLeft className="w-16 h-16 mx-auto text-[#F97316] mb-6" />
+          <PanelLeft className="w-16 h-16 mx-auto text-[#F97316] mb-6"/>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Panel Discussions</h1>
           <p className="text-lg text-gray-600 mb-8">
             Join engaging discussions with diverse panels of experts exploring critical topics
@@ -28,7 +24,6 @@ const PanelDiscussions = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
