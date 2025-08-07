@@ -109,10 +109,10 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 mt-8 animate-fade-in delay-700">
               <Link
-                to="/engage"
+                to="/tickets"
                 className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-md text-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
-                Be Part of PIW 2025 <ArrowRight size={20} />
+                Get Tickets <ArrowRight size={20} />
               </Link>
 
               {/*<a*/}

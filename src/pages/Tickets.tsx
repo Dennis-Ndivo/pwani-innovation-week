@@ -4,6 +4,7 @@ import {Dialog, Transition} from '@headlessui/react';
 const Tickets = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     first_name: '',
     last_name: '',
@@ -23,11 +24,15 @@ const Tickets = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     const res = await fetch('https://piw-express.onrender.com/api/waitlist', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(form),
     });
+
+    setLoading(false);
 
     if (res.ok) {
       setSuccess(true);
@@ -50,7 +55,6 @@ const Tickets = () => {
   return (
     <div className="min-h-screen">
 
-      {/* Hero Section */}
       <section className="pt-24 pb-20 bg-gradient-to-br from-purple-50 via-purple-100/50 to-white text-center relative">
         <div className="section-container">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
@@ -68,7 +72,6 @@ const Tickets = () => {
         </div>
       </section>
 
-      {/* Modal */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={closeModal}>
           <Transition.Child
@@ -80,7 +83,7 @@ const Tickets = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/30"/>
+            <div className="fixed inset-0 bg-black/30" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -94,8 +97,7 @@ const Tickets = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel
-                  className="w-full max-w-lg transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title className="text-2xl font-bold mb-4 text-gray-800">
                     Join the Waitlist
                   </Dialog.Title>
@@ -178,9 +180,33 @@ const Tickets = () => {
                       </div>
                       <button
                         type="submit"
-                        className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white py-3 rounded-lg font-semibold"
+                        disabled={loading}
+                        className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white py-3 rounded-lg font-semibold flex justify-center items-center"
                       >
-                        Submit
+                        {loading ? (
+                          <svg
+                            className="animate-spin h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                            ></path>
+                          </svg>
+                        ) : (
+                          'Submit'
+                        )}
                       </button>
                     </form>
                   )}
@@ -190,7 +216,6 @@ const Tickets = () => {
           </div>
         </Dialog>
       </Transition>
-
     </div>
   );
 };
