@@ -1,21 +1,5 @@
-
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { 
-  Mic, 
-  Users, 
-  Code, 
-  Map, 
-  Palette, 
-  Trophy, 
-  Camera, 
-  Calendar,
-  ArrowRight,
-  Star,
-  Clock,
-  MapPin
-} from 'lucide-react';
+import React, {useState} from 'react';
+import {ArrowRight, Clock, Code, Map, MapPin, Mic, Palette, Star, Trophy, Users} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const Engage = () => {
@@ -143,15 +127,15 @@ const Engage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-      
       {/* Hero Section */}
       <div className="pt-20 bg-gradient-to-br from-emerald-50 via-emerald-100/50 to-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-teal-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div
+            className="absolute top-1/4 right-1/4 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl animate-pulse"></div>
+          <div
+            className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-teal-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
-        
+
         <div className="section-container py-20 relative z-10">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
@@ -170,10 +154,10 @@ const Engage = () => {
         <div className="section-container">
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { id: 'sessions', label: 'Sessions & Events' },
-              { id: 'tracks', label: 'Focus Tracks' },
-              { id: 'goals', label: 'Our Goals' },
-              { id: 'special', label: 'Special Events' }
+              {id: 'sessions', label: 'Sessions & Events'},
+              {id: 'tracks', label: 'Focus Tracks'},
+              {id: 'goals', label: 'Our Goals'},
+              {id: 'special', label: 'Special Events'}
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -201,23 +185,24 @@ const Engage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Sessions & Events</h2>
                 <p className="text-xl text-gray-700">Diverse engagement opportunities throughout the week</p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {engagementTypes.map((type, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group animate-fade-in"
-                    style={{ animationDelay: `${index * 150}ms` }}
+                    style={{animationDelay: `${index * 150}ms`}}
                   >
                     <div className={`h-2 bg-gradient-to-r ${type.color}`}></div>
                     <div className="p-6">
-                      <div className={`w-16 h-16 mb-4 bg-gradient-to-br ${type.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <type.icon className="w-8 h-8 text-white" />
+                      <div
+                        className={`w-16 h-16 mb-4 bg-gradient-to-br ${type.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <type.icon className="w-8 h-8 text-white"/>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-gray-800 mb-3">{type.title}</h3>
                       <p className="text-gray-700 mb-4 leading-relaxed">{type.description}</p>
-                      
+
                       <div className="space-y-2 mb-4">
                         {type.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center text-sm text-gray-600">
@@ -226,10 +211,10 @@ const Engage = () => {
                           </div>
                         ))}
                       </div>
-                      
+
                       <div className="flex items-center justify-between">
                         <span className="text-[#F97316] font-semibold text-sm">{type.sessions}</span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#F97316] transition-colors" />
+                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#F97316] transition-colors"/>
                       </div>
                     </div>
                   </div>
@@ -245,28 +230,29 @@ const Engage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Focus Tracks</h2>
                 <p className="text-xl text-gray-700">Three strategic areas driving coastal innovation</p>
               </div>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {tracks.map((track, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                    style={{ animationDelay: `${index * 200}ms` }}
+                    style={{animationDelay: `${index * 200}ms`}}
                   >
                     <div className={`h-3 bg-gradient-to-r ${track.color}`}></div>
                     <div className="p-8">
-                      <div className={`w-20 h-20 mb-6 bg-gradient-to-br ${track.color} rounded-full flex items-center justify-center mx-auto`}>
-                        <track.icon className="w-10 h-10 text-white" />
+                      <div
+                        className={`w-20 h-20 mb-6 bg-gradient-to-br ${track.color} rounded-full flex items-center justify-center mx-auto`}>
+                        <track.icon className="w-10 h-10 text-white"/>
                       </div>
-                      
+
                       <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">{track.title}</h3>
                       <p className="text-gray-700 mb-6 leading-relaxed text-center">{track.description}</p>
-                      
+
                       <div className="space-y-3">
                         <h4 className="font-semibold text-gray-800 text-center">Key Topics:</h4>
                         <div className="flex flex-wrap justify-center gap-2">
                           {track.topics.map((topic, topicIndex) => (
-                            <span 
+                            <span
                               key={topicIndex}
                               className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
                             >
@@ -289,16 +275,17 @@ const Engage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">This Year's Goals</h2>
                 <p className="text-xl text-gray-700">Three strategic objectives for PIW 2025</p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {goals.map((goal, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="text-center bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                    style={{ animationDelay: `${index * 200}ms` }}
+                    style={{animationDelay: `${index * 200}ms`}}
                   >
-                    <div className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${goal.color} rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300`}>
-                      <goal.icon className="w-12 h-12 text-white" />
+                    <div
+                      className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${goal.color} rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300`}>
+                      <goal.icon className="w-12 h-12 text-white"/>
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">{goal.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{goal.description}</p>
@@ -315,27 +302,27 @@ const Engage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Special Events</h2>
                 <p className="text-xl text-gray-700">Exclusive experiences beyond regular sessions</p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {specialEvents.map((event, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                    style={{ animationDelay: `${index * 200}ms` }}
+                    style={{animationDelay: `${index * 200}ms`}}
                   >
                     <div className="bg-gradient-to-br from-[#F97316] to-[#EA580C] p-6 text-white">
-                      <event.icon className="w-12 h-12 mb-4 mx-auto" />
+                      <event.icon className="w-12 h-12 mb-4 mx-auto"/>
                       <h3 className="text-xl font-bold text-center">{event.title}</h3>
                     </div>
                     <div className="p-6">
                       <p className="text-gray-700 mb-4 leading-relaxed">{event.description}</p>
                       <div className="space-y-2">
                         <div className="flex items-center text-sm text-gray-600">
-                          <Clock className="w-4 h-4 mr-2 text-[#F97316]" />
+                          <Clock className="w-4 h-4 mr-2 text-[#F97316]"/>
                           {event.time}
                         </div>
                         <div className="flex items-center text-sm text-gray-600">
-                          <MapPin className="w-4 h-4 mr-2 text-[#F97316]" />
+                          <MapPin className="w-4 h-4 mr-2 text-[#F97316]"/>
                           {event.location}
                         </div>
                       </div>
@@ -362,16 +349,14 @@ const Engage = () => {
             {/*  Register as Participant*/}
             {/*</button>*/}
             <Link
-                to="/speaking/apply"
-                className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-block"
+              to="/speaking/apply"
+              className="bg-white text-[#F97316] px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-block"
             >
               Apply to Speak
             </Link>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

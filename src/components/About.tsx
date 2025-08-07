@@ -28,28 +28,28 @@ const About = () => {
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="/images/A26I8167.JPG" 
+                src="/images/breakfast-nbi/4.jpg"
                 alt="Innovation hackathon" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="/images/A26I7994.JPG" 
+                src="/images/breakfast-nbi/5.jpg"
                 alt="Panel discussions" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="/images/A26I7945.JPG" 
+                src="/images/breakfast-nbi/6.jpg"
                 alt="Plenary sessions" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img 
-                src="/images/A26I1187.JPG" 
+                src="/images/breakfast-nbi/7.jpg"
                 alt="Networking events" 
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -61,7 +61,7 @@ const About = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm card-hover relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
+                src="/images/breakfast-nbi/0.jpg"
                 alt="Hackathon" 
                 className="w-full h-full object-cover"
               />
@@ -77,7 +77,7 @@ const About = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm card-hover relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                src="/images/breakfast-nbi/1.jpg"
                 alt="Panel Sessions" 
                 className="w-full h-full object-cover"
               />
@@ -93,7 +93,7 @@ const About = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm card-hover relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
               <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
+                src="/images/breakfast-nbi/2.jpg"
                 alt="Plenary Sessions" 
                 className="w-full h-full object-cover"
               />
@@ -109,7 +109,7 @@ const About = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm card-hover relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                src="/images/breakfast-nbi/3.jpg"
                 alt="Networking" 
                 className="w-full h-full object-cover"
               />

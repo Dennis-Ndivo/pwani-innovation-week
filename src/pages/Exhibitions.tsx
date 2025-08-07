@@ -1,16 +1,12 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { GalleryHorizontal } from 'lucide-react';
+import {GalleryHorizontal} from 'lucide-react';
 
 const Exhibitions = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="section-container pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <GalleryHorizontal className="w-16 h-16 mx-auto text-[#F97316] mb-6" />
+          <GalleryHorizontal className="w-16 h-16 mx-auto text-[#F97316] mb-6"/>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Exhibitions</h1>
           <p className="text-lg text-gray-600 mb-8">
             Explore innovative projects, products, and solutions from startups, companies,
@@ -28,8 +24,7 @@ const Exhibitions = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+      ¬ </div>
   );
 };
 

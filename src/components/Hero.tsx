@@ -21,19 +21,19 @@ const Hero = () => {
     {
       title: "Pwani Innovation Week 2025",
       subtitle: "Pwani Re-imagined: Youth Agency, Innovation & Sustainability of Coastal Economies",
-      image: "/images/image3.jpg",
+      image: "/images/breakfast-nbi/1.jpg",
       description: "A Pwani-led and youth-driven annual convening for sustainable coastal development."
     },
     {
       title: "Youth at the Center",
       subtitle: "Empowering young changemakers to shape the future of coastal economies",
-      image: "/images/image7 (2).jpg",
+      image: "/images/breakfast-nbi/3.jpg",
       description: "Building a resilient and youthful workforce through innovation and entrepreneurship."
     },
     {
       title: "Innovation & Sustainability",
       subtitle: "Harnessing technology and creativity for coastal transformation",
-      image: "/images/image4.jpg",
+      image: "/images/breakfast-nbi/5.jpg",
       description: "Creating localized solutions for sustainable growth in Kenya's coast."
     }
   ];
@@ -109,10 +109,10 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 mt-8 animate-fade-in delay-700">
               <Link
-                to="/engage"
+                to="/tickets"
                 className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-md text-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
-                Be Part of PIW 2025 <ArrowRight size={20} />
+                Get Tickets <ArrowRight size={20} />
               </Link>
 
               {/*<a*/}

@@ -1,18 +1,15 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, Globe, Handshake, Rocket } from 'lucide-react';
+import {Card, CardContent} from '@/components/ui/card';
+import {Badge} from '@/components/ui/badge';
+import {Calendar, Globe, Handshake, MapPin, Rocket, Users} from 'lucide-react';
 
 const PIW2024 = () => {
   const highlights = [
-    { number: "2,000+", label: "Participants" },
-    { number: "60+", label: "Speakers" },
-    { number: "35", label: "Sessions" },
-    { number: "25", label: "Startups Pitched" },
-    { number: "8", label: "Countries Represented" }
+    {number: "2,000+", label: "Participants"},
+    {number: "60+", label: "Speakers"},
+    {number: "35", label: "Sessions"},
+    {number: "25", label: "Startups Pitched"},
+    {number: "8", label: "Countries Represented"}
   ];
 
   const themes = [
@@ -67,8 +64,7 @@ const PIW2024 = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
-      <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -84,11 +80,11 @@ const PIW2024 = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-lg text-gray-700">
               <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-[#F97316]" />
+                <Calendar className="h-5 w-5 text-[#F97316]"/>
                 <span>October 28 - November 1, 2024</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-[#F97316]" />
+                <MapPin className="h-5 w-5 text-[#F97316]"/>
                 <span>Mombasa, Kenya</span>
               </div>
             </div>
@@ -96,7 +92,7 @@ const PIW2024 = () => {
 
           {/* Hero Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-scale-in delay-300">
-            <img 
+            <img
               src="/images/Z50_5583.jpg"
               alt="PIW 2024 Event"
               className="w-full h-96 md:h-[500px] object-cover"
@@ -118,10 +114,10 @@ const PIW2024 = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {highlights.map((stat, index) => (
-              <div 
+              <div
                 key={index}
                 className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#F97316]/10 to-blue-50 card-hover animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{animationDelay: `${index * 100}ms`}}
               >
                 <div className="text-3xl md:text-4xl font-bold text-[#F97316] mb-2">
                   {stat.number}
@@ -142,24 +138,24 @@ const PIW2024 = () => {
                 About <span className="gradient-text">PIW 2024</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                The 5th edition of Pwani Innovation Week marked a historic milestone by expanding beyond 
-                Kenya's borders to include Tanzania. Themed "The Pwani We Desire: Youth, Culture, Peace 
-                and Innovation in the Decade of Action," PIW 2024 emphasized the power of regional collaboration 
+                The 5th edition of Pwani Innovation Week marked a historic milestone by expanding beyond
+                Kenya's borders to include Tanzania. Themed "The Pwani We Desire: Youth, Culture, Peace
+                and Innovation in the Decade of Action," PIW 2024 emphasized the power of regional collaboration
                 in driving sustainable development.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                This groundbreaking edition fostered meaningful cross-border partnerships, celebrated 
-                coastal cultures, and positioned youth as key drivers of innovation and peace-building 
-                in the region. The event successfully demonstrated how shared challenges can become 
+                This groundbreaking edition fostered meaningful cross-border partnerships, celebrated
+                coastal cultures, and positioned youth as key drivers of innovation and peace-building
+                in the region. The event successfully demonstrated how shared challenges can become
                 opportunities for collective growth.
               </p>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-gray-800">Key Themes:</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {themes.map((theme, index) => (
-                    <Badge 
+                    <Badge
                       key={index}
-                      variant="outline" 
+                      variant="outline"
                       className="p-2 justify-start text-sm border-[#F97316] text-[#F97316]"
                     >
                       {theme}
@@ -169,12 +165,12 @@ const PIW2024 = () => {
               </div>
             </div>
             <div className="space-y-6 animate-slide-up delay-300">
-              <img 
+              <img
                 src="/images/DSC_5019.jpg"
                 alt="PIW 2024 Cross-border"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
-              <img 
+              <img
                 src="/images/Z50_5527.jpg"
                 alt="PIW 2024 Culture"
                 className="rounded-2xl shadow-lg w-full h-48 object-cover"
@@ -192,14 +188,14 @@ const PIW2024 = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 text-center card-hover animate-scale-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+                style={{animationDelay: `${index * 150}ms`}}
               >
                 <CardContent className="p-0">
                   <div className="bg-[#F97316] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <achievement.icon className="h-8 w-8 text-white" />
+                    <achievement.icon className="h-8 w-8 text-white"/>
                   </div>
                   <h3 className="text-lg font-semibold mb-3">{achievement.title}</h3>
                   <p className="text-gray-600">{achievement.description}</p>
@@ -218,19 +214,19 @@ const PIW2024 = () => {
           </h2>
           <div className="space-y-12">
             {keyMoments.map((moment, index) => (
-              <div 
+              <div
                 key={index}
                 className={`grid md:grid-cols-2 gap-8 items-center animate-fade-in ${
                   index % 2 === 1 ? 'md:grid-flow-col-dense' : ''
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{animationDelay: `${index * 200}ms`}}
               >
                 <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
                   <h3 className="text-2xl font-bold mb-4">{moment.title}</h3>
                   <p className="text-lg text-gray-600 leading-relaxed">{moment.description}</p>
                 </div>
                 <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
-                  <img 
+                  <img
                     src={moment.image}
                     alt={moment.title}
                     className="rounded-2xl shadow-lg w-full h-64 object-cover card-hover"
@@ -249,8 +245,8 @@ const PIW2024 = () => {
             The Legacy Continues
           </h2>
           <p className="text-xl max-w-4xl mx-auto mb-8 animate-slide-up delay-300">
-            PIW 2024 set the foundation for regional collaboration and cross-border innovation. 
-            The partnerships formed and initiatives launched continue to drive positive change 
+            PIW 2024 set the foundation for regional collaboration and cross-border innovation.
+            The partnerships formed and initiatives launched continue to drive positive change
             across coastal East Africa, inspiring the next generation of leaders and innovators.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -269,8 +265,6 @@ const PIW2024 = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
