@@ -1,7 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+
+const API_BASE = 'https://piw-express.onrender.com';
 
 const Vendors = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [serverMessage, setServerMessage] = useState<string | null>(null);
+  const [missingFields, setMissingFields] = useState<string[]>([]);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
   const [form, setForm] = useState({
     first_name: '',
     last_name: '',
@@ -11,55 +19,115 @@ const Vendors = () => {
     agree_communications: false,
     business_name: '',
     business_address: '',
+    business_description: '',
     is_registered: false,
     business_phone: '',
     business_email: '',
     vendor_type: 'food',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const {name, value, type, checked} = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked } = e.target as HTMLInputElement;
     setForm((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await fetch('https://piw-express.onrender.com/api/vendors', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(form),
+  const resetForm = () =>
+    setForm({
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone_number: '',
+      agree_terms: false,
+      agree_communications: false,
+      business_name: '',
+      business_address: '',
+      business_description: '',
+      is_registered: false,
+      business_phone: '',
+      business_email: '',
+      vendor_type: 'food',
     });
 
-    if (res.ok) {
-      setSubmitted(true);
-      setForm({
-        first_name: '',
-        last_name: '',
-        email: '',
-        phone_number: '',
-        agree_terms: false,
-        agree_communications: false,
-        business_name: '',
-        business_address: '',
-        is_registered: false,
-        business_phone: '',
-        business_email: '',
-        vendor_type: 'food',
+  const isMissing = (name: string) => missingFields.includes(name);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+    setServerMessage(null);
+    setMissingFields([]);
+    setFieldErrors({});
+    try {
+      const res = await fetch(`${API_BASE}/api/vendors`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
       });
+
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+
+      console.log('API Response Status:', res.status);
+      console.log('API Response Body:', data);
+
+      const success =
+        res.ok &&
+        (
+          data?.success === true ||
+          data?._id ||
+          data?.data?._id
+        );
+
+      if (!success) {
+        const message =
+          data?.message ||
+          data?.error ||
+          (typeof data === 'string' ? data : 'Submission failed');
+        console.error('Submission error:', message);
+        setError(message);
+
+        if (data?.errors?.missing_fields) {
+          console.warn('Missing fields:', data.errors.missing_fields);
+          setMissingFields(data.errors.missing_fields);
+        }
+
+        const perField: Record<string, string> = {};
+        if (data?.errors?.vendor_type) {
+          console.warn('Vendor type error:', data.errors.vendor_type);
+          perField.vendor_type = data.errors.vendor_type;
+        }
+        setFieldErrors(perField);
+
+        setSubmitting(false);
+        return;
+      }
+
+      console.log('Vendor created successfully:', data);
+      setServerMessage(data?.message || 'Vendor created successfully');
+      setSubmitted(true);
+      resetForm();
+    } catch (err: any) {
+      console.error('Network or unexpected error:', err);
+      setError(err?.message || 'Network error');
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <div className="min-h-screen">
-
       <section className="pt-24 pb-12 bg-gradient-to-br from-purple-50 via-purple-100/50 to-white text-center">
         <div className="section-container">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Vendor Application
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Vendor Application</h1>
           <p className="text-xl text-gray-700 max-w-xl mx-auto">
             Register your business to participate in PIW 2025 as a vendor.
           </p>
@@ -70,11 +138,14 @@ const Vendors = () => {
         <div className="section-container max-w-3xl">
           {submitted ? (
             <div className="text-center">
-              <p className="text-green-600 text-lg mb-4">
-                Application submitted successfully!
-              </p>
+              {serverMessage && (
+                <p className="text-green-600 text-lg mb-4">{serverMessage}</p>
+              )}
               <button
-                onClick={() => setSubmitted(false)}
+                onClick={() => {
+                  setSubmitted(false);
+                  setServerMessage(null);
+                }}
                 className="mt-4 bg-[#F97316] hover:bg-[#EA580C] text-white px-6 py-3 rounded-lg"
               >
                 Submit Another
@@ -82,6 +153,28 @@ const Vendors = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {error && (
+                <div className="w-full rounded-md border border-red-300 bg-red-50 px-4 py-3 text-red-700 space-y-2">
+                  <div>{error}</div>
+                  {missingFields.length > 0 && (
+                    <ul className="list-disc list-inside">
+                      {missingFields.map((f) => (
+                        <li key={f}>{f} is required</li>
+                      ))}
+                    </ul>
+                  )}
+                  {Object.keys(fieldErrors).length > 0 && (
+                    <ul className="list-disc list-inside">
+                      {Object.entries(fieldErrors).map(([k, v]) => (
+                        <li key={k}>
+                          {k}: {v}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -90,7 +183,10 @@ const Vendors = () => {
                   value={form.first_name}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('first_name')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('first_name') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
                 <input
                   type="text"
@@ -99,7 +195,10 @@ const Vendors = () => {
                   value={form.last_name}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('last_name')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('last_name') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
               </div>
 
@@ -111,7 +210,10 @@ const Vendors = () => {
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('email')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('email') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
                 <input
                   type="tel"
@@ -120,7 +222,10 @@ const Vendors = () => {
                   value={form.phone_number}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('phone_number')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('phone_number') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
               </div>
 
@@ -131,7 +236,10 @@ const Vendors = () => {
                 value={form.business_name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+                aria-invalid={isMissing('business_name')}
+                className={`w-full border px-4 py-2 rounded-lg ${
+                  isMissing('business_name') ? 'border-red-500' : 'border-gray-300'
+                }`}
               />
 
               <input
@@ -141,7 +249,23 @@ const Vendors = () => {
                 value={form.business_address}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+                aria-invalid={isMissing('business_address')}
+                className={`w-full border px-4 py-2 rounded-lg ${
+                  isMissing('business_address') ? 'border-red-500' : 'border-gray-300'
+                }`}
+              />
+
+              <textarea
+                name="business_description"
+                placeholder="Business Description"
+                value={form.business_description}
+                onChange={handleChange}
+                required
+                rows={3}
+                aria-invalid={isMissing('business_description')}
+                className={`w-full border px-4 py-2 rounded-lg ${
+                  isMissing('business_description') ? 'border-red-500' : 'border-gray-300'
+                }`}
               />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -152,7 +276,10 @@ const Vendors = () => {
                   value={form.business_phone}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('business_phone')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('business_phone') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
                 <input
                   type="email"
@@ -161,22 +288,32 @@ const Vendors = () => {
                   value={form.business_email}
                   onChange={handleChange}
                   required
-                  className="border border-gray-300 px-4 py-2 rounded-lg"
+                  aria-invalid={isMissing('business_email')}
+                  className={`border px-4 py-2 rounded-lg ${
+                    isMissing('business_email') ? 'border-red-500' : 'border-gray-300'
+                  }`}
                 />
               </div>
 
-              <select
-                name="vendor_type"
-                value={form.vendor_type}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg"
-              >
-                <option value="food">Food Vendor</option>
-                <option value="crafts">Crafts Vendor</option>
-                <option value="tech">Tech Exhibitor</option>
-                <option value="services">Services Provider</option>
-              </select>
+              <div>
+                <select
+                  name="vendor_type"
+                  value={form.vendor_type}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!fieldErrors.vendor_type}
+                  className={`w-full border px-4 py-2 rounded-lg ${
+                    fieldErrors.vendor_type ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                >
+                  <option value="food">food</option>
+                  <option value="drinks">drinks</option>
+                  <option value="food and drinks">food and drinks</option>
+                </select>
+                {fieldErrors.vendor_type && (
+                  <p className="mt-1 text-sm text-red-600">{fieldErrors.vendor_type}</p>
+                )}
+              </div>
 
               <div className="flex items-center gap-2">
                 <input
@@ -212,15 +349,15 @@ const Vendors = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#F97316] hover:bg-[#EA580C] text-white py-3 rounded-lg font-semibold"
+                disabled={submitting}
+                className="w-full bg-[#F97316] hover:bg-[#EA580C] disabled:opacity-60 text-white py-3 rounded-lg font-semibold"
               >
-                Submit Application
+                {submitting ? 'Submitting…' : 'Submit Application'}
               </button>
             </form>
           )}
         </div>
       </section>
-
     </div>
   );
 };
