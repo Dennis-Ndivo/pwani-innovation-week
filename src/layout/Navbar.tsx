@@ -95,6 +95,14 @@ const Navbar = () => {
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <Link
+                        to="/exhibitors"
+                        className="block w-full text-gray-800 hover:text-[#F97316]"
+                      >
+                        Exhibitor Application
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link
                         to="/contact"
                         className="block w-full text-gray-800 hover:text-[#F97316]"
                       >
