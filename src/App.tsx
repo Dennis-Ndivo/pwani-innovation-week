@@ -22,6 +22,7 @@ import Tickets from "@/pages/Tickets.tsx";
 import Vendors from "@/pages/Vendors.tsx";
 import Inquiries from "@/pages/Inquiries.tsx";
 import Schedule from "./pages/Schedule.tsx";
+import Exhibitors from "./pages/Exhibitors.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +36,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index/>}/>
             <Route path="/about" element={<About/>}/>
-             <Route path="/schedule" element={<Schedule />} />
+            <Route path="/schedule" element={<Schedule />} />
             <Route path="/speakers" element={<Speakers/>}/>
             <Route path="/tickets" element={<Tickets/>}/>
             <Route path="/speaking/apply" element={<SpeakerApplicationForm/>}/>
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/panel-discussions" element={<PanelDiscussions/>}/>
             <Route path="/networking-events" element={<NetworkingEvents/>}/>
             <Route path="/exhibitions" element={<Exhibitions/>}/>
+            <Route path="/exhibitors" element={<Exhibitors/>}/>
             <Route path="/piw-2023" element={<PIW2023/>}/>
             <Route path="/piw-2024" element={<PIW2024/>}/>
             <Route path="*" element={<NotFound/>}/>
