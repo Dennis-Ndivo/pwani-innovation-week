@@ -268,6 +268,13 @@ const Navbar = () => {
                     Vendor Application
                   </Link>
                   <Link
+                    to="/exhibitors"
+                    onClick={() => setIsOpen(false)}
+                    className="text-base text-gray-700 hover:text-[#F97316] transition-colors"
+                  >
+                    Exhibitor Application
+                  </Link>
+                  <Link
                     to="/contact"
                     onClick={() => setIsOpen(false)}
                     className="text-base text-gray-700 hover:text-[#F97316] transition-colors"
