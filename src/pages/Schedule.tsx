@@ -111,7 +111,7 @@ const Schedule = () => {
     <div className="min-h-screen">
 
       {/* Hero Section */}
-      <div className="pt-20 bg-gradient-to-br from-blue-50 via-blue-100/50 to-white relative overflow-hidden">
+      <div className="pt-8 bg-gradient-to-br from-blue-50 via-blue-100/50 to-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
           <div
             className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl animate-pulse"></div>

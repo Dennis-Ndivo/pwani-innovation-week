@@ -125,7 +125,7 @@ const Vendors = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="pt-24 pb-12 bg-gradient-to-br from-purple-50 via-purple-100/50 to-white text-center">
+      <section className="pt-8 pb-12 bg-gradient-to-br from-purple-50 via-purple-100/50 to-white text-center">
         <div className="section-container">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Vendor Application</h1>
           <p className="text-xl text-gray-700 max-w-xl mx-auto">

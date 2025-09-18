@@ -99,7 +99,7 @@ const Speakers = () => {
       {/* Other sections omitted for brevity */}
 
       {/* Speaker Application Form */}
-      <section className="py-20 bg-white">
+      <section className="pt-8 py-20 bg-white">
         <div className="section-container max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-center">Apply to Speak</h2>
           {submitted ? (
